@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portfolio Website-Veerender</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- linking css file -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% extends "navbar.html" %}
+    {% block content %}
+    <style>
+        /* Hide the specified section on the second page */
+        #home {
+            display: none;
+        }
+    </style>
+    <section id="about">
+        <div class="container mt-10 pt-2">
+            <div class="row">
+            <div class="col-lg-12"></div>
+                <h1 class="text-center">About Me:</h1>
+                <div class="row mt-3">
+                <p>
+                    Greetings! I'm a seasoned DevOps engineer with a rich and dynamic six-year journey in the ever-evolving landscape of technology. My professional expedition has equipped me with a robust skill set and an in-depth understanding of DevOps principles. Throughout my career, I've successfully implemented and optimized CI/CD pipelines, orchestrated scalable infrastructure, and enhanced system reliability, all while adhering to best practices. My passion for embracing cutting-edge technologies has been a driving force behind my commitment to continuous learning, ensuring that I stay at the forefront of industry trends. As a dedicated problem solver and collaborator, I thrive in environments where innovation and efficiency converge. I am excited to share my experiences, contribute to transformative projects, and further elevate the realm of DevOps excellence.
+                </p>
+                </div>
+                    <div class="row mt-3">
+                        <p> Throughout my journey, I've had the opportunity to work with notable clients such as Comcast and CapitalOne, gaining exposure to a diverse set of tools and technologies. My expertise includes proficiency in Kubernetes, Docker, Terraform, Ansible, Concourse, Drone, Jenkins, Prometheus, Grafana, Splunk, Datadog, ELK, NewRelic, and APM Traces using the Jaeger tool. I've implemented robust DevSecOps pipelines utilizing Whitesource and Checkmarx, incorporating code quality scans with SonarQube. Additionally, my responsibilities extended to addressing server and container security vulnerabilities through tools like Qualys, CrowdStrike, Eracent, and others. Proficient in source code management using Git and Artifactory by JFrog, I've effectively utilized cloud resources such as EC2, Lambda, IAM, S3, ECS-EC2, ECS-Fargate, Elastic Cache, DocumentDB, RDS, VPC, and more, provisioning them both in AWS and OpenStack. My comprehensive skill set underscores my commitment to excellence in navigating the complexities of DevOps engineering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    {% endblock %}
+</body>
+</html>
