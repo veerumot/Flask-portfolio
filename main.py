@@ -6,6 +6,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask_cors import CORS
+from OpenSSL import SSL
+
+context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+context.use_privatekey_file('server.key')
+context.use_certificate_file('server.crt')
 
 app = Flask(__name__)
 CORS(app)
@@ -68,4 +73,4 @@ def submit():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port='443', debug=True, ssl_context=context)
