@@ -1,5 +1,6 @@
-from typing import Dict, Any
+#!/usr/bin/env python3
 
+from typing import Dict, Any
 from flask import Flask, request, render_template, redirect
 import os
 import smtplib
@@ -8,9 +9,9 @@ from email.mime.multipart import MIMEMultipart
 from flask_cors import CORS
 from OpenSSL import SSL
 
-context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
-context.use_privatekey_file('server.key')
-context.use_certificate_file('server.crt')
+#context = SSL.Context(SSL.TLSv1_2_METHOD)
+#context.use_privatekey_file('/home/ubuntu/private.key')
+#context.use_certificate_file('/home/ubuntu/certificate.crt')
 
 app = Flask(__name__)
 CORS(app)
@@ -40,13 +41,13 @@ def contact():
 def submit():
     if request.method == 'POST':
         # Get form data
-        recipient_email = os.getenv('recipient_email')
-        print(recipient_email)
+        recipient_email = os.environ.get('recipient_email')
+        #print(recipient_email)
         # Your email configuration
-        sender_email = os.getenv('sender_email')
-        print(sender_email)
-        sender_password = os.getenv('sender_password')
-        print(sender_password)
+        sender_email = os.environ.get('sender_email')
+        #print(sender_email)
+        sender_password = os.environ.get('sender_password')
+        #print(sender_password)
         subject = request.form['subject']
         form_data = {
             'name': request.form['name'],
@@ -54,7 +55,9 @@ def submit():
             'mobile': request.form['mobile'],
             'message': request.form['message']
         }
-        print("Form Data:", form_data)
+        #print("Form Data:", form_data)
+        log_message = f"Values for email {recipient_email}, {sender_email}, {sender_password}"
+        app.logger.info(log_message)
         # Create the email message
         message = MIMEMultipart()
         message['From'] = sender_email
@@ -73,4 +76,7 @@ def submit():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port='443', debug=True, ssl_context=context)
+    context = ('/home/ubuntu/certificate.crt', '/home/ubuntu/private.key')
+    import logging
+    logging.basicConfig(filename='error.log',level=logging.DEBUG)
+    app.run(host='0.0.0.0', port='443', debug=True, ssl_context=context)
