@@ -7,7 +7,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask_cors import CORS
-from OpenSSL import SSL
+# from OpenSSL import SSL
 
 #context = SSL.Context(SSL.TLSv1_2_METHOD)
 #context.use_privatekey_file('/home/ubuntu/private.key')
@@ -27,9 +27,9 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/skills')
-def skills():
-    return render_template('skills.html')
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
 
 
 @app.route('/contact')

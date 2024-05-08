@@ -1,33 +1,43 @@
 .navbar-nav a{
     color: black;
+    margin: 0;
+    padding: 0;
   }
 .navbar-brand {
     color: black;
+    margin: 0;
+    padding: 0;
 }
 /* hero background image */
 .bgimage {
-    height:110vh;
-    background: url('../images/B330224B-2129-40DD-8C28-062B1B221BF7.jpeg');
+    height:115vh;
+    background: url('../images/FB8460EF-3F4C-49EB-8A64-1F059E691032.JPEG');
     background-size:cover;
     position:relative;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    overflow: hidden;
+    padding-top: 2rem;
+}
+
+.text-center {
+   font-size: 0.5in;
 }
 body {
-    background-color: #f0f0f0; /* Replace with your preferred color code or name */
+    background-color: #1d2255; /* Replace with your preferred color code or name */
 }
-/* text css above hero image*/
-.hero_title {
-    font-size: 3.5rem;
-}
-.hero_desc {
-    font-size: 2rem;
-}
+
 .hero-text {
-    text-align: right;
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: black;
+    color: hsl(0, 3%, 24%);
+    /* padding: 20px; */
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 }
 
 ul {
@@ -38,37 +48,9 @@ ul {
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+  padding-top: 2rem;
 }
 
-/* about section image css */
-.imageAboutPage {
-    display: none;
-
-}
-#about p {
-    max-width: 100%;
-}
-/* .col-lg-8 {
-    color: black;
-
-} */
-
-/* services section css */
-.servicesText.card {
-    height: 280px;
-    cursor: pointer;
-  }
-.servicesIcon {
-    font-size: 36px;
-    text-align: center;
-    width: 100%;
-}
-.card-title {
-    text-align: center;
-}
-.card:hover .servicesIcon {
-    color: #008000;
-}
 .servicesText:hover {
     border: 1px solid #008000;
 }
@@ -83,28 +65,51 @@ ul {
     font-size: 36px;
     cursor: pointer;
 }
-.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+/* .fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
     color: #008000;
-}
+} */
 .fab {
     color: #000000;
 }
 /* footer styling */
-#footer {
+/* #footer {
     background-color: #808080;
     text-align: center;
-}
+} */
 
 /* spacing on all sections */
 #about, #services, #portfolio, #contact {
-    margin-top: 4rem;
-    padding-top: 4rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
 }
 #contact {
     padding-bottom: 4rem;
 }
 
-#about,
-#skills {
-    padding-top: 100px; /* Adjust this value based on your navbar height */
+#home{
+    margin-top: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
+
+table.center {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  /* .text-left {
+    padding-left: 16%;
+  } */
