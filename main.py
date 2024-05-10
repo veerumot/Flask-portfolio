@@ -76,7 +76,7 @@ def submit():
 
 
 if __name__ == '__main__':
-    context = ('/etc/letsencrypt/live/veerender-mothukuri.com/fullchain.pem', '/etc/letsencrypt/live/veerender-mothukuri.com/privkey.pem')
-    #import logging
-    #logging.basicConfig(filename='error.log',level=logging.DEBUG)
-    app.run(host='0.0.0.0', port='443', debug=True, ssl_context=context)
+    # context = ('/etc/letsencrypt/live/veerender-mothukuri.com/fullchain.pem', '/etc/letsencrypt/live/veerender-mothukuri.com/privkey.pem')
+    import logging
+    logging.basicConfig(filename='error.log',level=logging.DEBUG)
+    # app.run(host='0.0.0.0', port='443', debug=True)
